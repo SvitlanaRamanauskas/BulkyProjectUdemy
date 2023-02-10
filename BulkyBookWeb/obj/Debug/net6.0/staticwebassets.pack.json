@@ -17,6 +17,30 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "C:\\Users\\User\\source\\repos\\BulkyBook\\BulkyBookWeb\\wwwroot\\images\\products\\18869e46-3715-47e6-bfbd-e8cc8f328d93.jpg",
+      "PackagePath": "staticwebassets\\images\\products\\18869e46-3715-47e6-bfbd-e8cc8f328d93.jpg"
+    },
+    {
+      "Id": "C:\\Users\\User\\source\\repos\\BulkyBook\\BulkyBookWeb\\wwwroot\\images\\products\\3370d768-cca0-4b00-9133-15595036d88f.jpg",
+      "PackagePath": "staticwebassets\\images\\products\\3370d768-cca0-4b00-9133-15595036d88f.jpg"
+    },
+    {
+      "Id": "C:\\Users\\User\\source\\repos\\BulkyBook\\BulkyBookWeb\\wwwroot\\images\\products\\4577100e-8278-44f9-a61b-0a29f61a293b.jpg",
+      "PackagePath": "staticwebassets\\images\\products\\4577100e-8278-44f9-a61b-0a29f61a293b.jpg"
+    },
+    {
+      "Id": "C:\\Users\\User\\source\\repos\\BulkyBook\\BulkyBookWeb\\wwwroot\\images\\products\\7043b984-e0b2-438f-8bc9-a92be579b270.jpg",
+      "PackagePath": "staticwebassets\\images\\products\\7043b984-e0b2-438f-8bc9-a92be579b270.jpg"
+    },
+    {
+      "Id": "C:\\Users\\User\\source\\repos\\BulkyBook\\BulkyBookWeb\\wwwroot\\images\\products\\b9c82d77-cb10-44d6-806f-7e37854d35b9.jpg",
+      "PackagePath": "staticwebassets\\images\\products\\b9c82d77-cb10-44d6-806f-7e37854d35b9.jpg"
+    },
+    {
+      "Id": "C:\\Users\\User\\source\\repos\\BulkyBook\\BulkyBookWeb\\wwwroot\\js\\product.js",
+      "PackagePath": "staticwebassets\\js\\product.js"
+    },
+    {
       "Id": "C:\\Users\\User\\source\\repos\\BulkyBook\\BulkyBookWeb\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },

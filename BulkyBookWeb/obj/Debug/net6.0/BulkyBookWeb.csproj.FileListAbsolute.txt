@@ -562,3 +562,5 @@ C:\Users\User\source\repos\BulkyBook\BulkyBookWeb\bin\Debug\net6.0\BulkyBook.Mod
 C:\Users\User\source\repos\BulkyBook\BulkyBookWeb\bin\Debug\net6.0\BulkyBook.DataAccess.pdb
 C:\Users\User\source\repos\BulkyBook\BulkyBookWeb\bin\Debug\net6.0\BulkyBook.Models.pdb
 C:\Users\User\source\repos\BulkyBook\BulkyBookWeb\obj\Debug\net6.0\BulkyBookWeb.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\User\source\repos\BulkyBook\BulkyBookWeb\bin\Debug\net6.0\Microsoft.Extensions.Caching.Memory.dll
+C:\Users\User\source\repos\BulkyBook\BulkyBookWeb\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.dll

@@ -7,10 +7,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="6.0.0" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.0-preview.7.21378.4" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.0-preview.7.21378.4" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="6.0.0-preview.7.21378.4">
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="6.0.11" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.11" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="6.0.11" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.11" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="6.0.11">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
@@ -19,6 +20,10 @@
 
   <ItemGroup>
     <ProjectReference Include="..\BulkyBook.DataAccess\BulkyBook.DataAccess.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\images\products\" />
   </ItemGroup>
 
 </Project>
