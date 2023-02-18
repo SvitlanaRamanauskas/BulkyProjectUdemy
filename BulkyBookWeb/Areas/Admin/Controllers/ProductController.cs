@@ -28,7 +28,7 @@ namespace BulkyBookWeb.Areas.Admin.Controllers
 			return View();
 		}
 
-		//UpSert
+		//GET
 		public IActionResult Upsert(int? id)
 		{
 			ProductVM productVM = new()
@@ -38,45 +38,62 @@ namespace BulkyBookWeb.Areas.Admin.Controllers
 				{
 					Text = i.Name,
 					Value = i.Id.ToString()
-				}), //projection using select FOR dropdowns
+				}),
 				CoverTypeList = _unitOfWork.CoverType.GetAll().Select(i => new SelectListItem
 				{
 					Text = i.Name,
 					Value = i.Id.ToString()
 				}),
 			};
+
 			if (id == null || id == 0)
 			{
-				//create
-				//ViewBag.CategoryList = categoryList;
-				//ViewData["CoverTypeList"] = coverTypeList;
+				//create product
+				//ViewBag.CategoryList = CategoryList;
+				//ViewData["CoverTypeList"] = CoverTypeList;
 				return View(productVM);
 			}
 			else
 			{
-				//update
+				productVM.Product = _unitOfWork.Product.GetFirstOrDefault(u => u.Id == id);
+				return View(productVM);
+
+				//update product
 			}
-			return View(productVM);
-	}
 
 
+		}
+
+		//POST
 		[HttpPost]
 		[ValidateAntiForgeryToken]
 		public IActionResult Upsert(ProductVM obj, IFormFile? file)
 		{
+
 			if (ModelState.IsValid)
 			{
 				string wwwRootPath = _hostEnvironment.WebRootPath;
 				if (file != null)
 				{
 					string fileName = Guid.NewGuid().ToString();
-					var uploads = Path.Combine(wwwRootPath, @"images/products");
-					var extenshion = Path.GetExtension(file.FileName);
-					using (var fileStreams = new FileStream(Path.Combine(uploads, fileName+extenshion), FileMode.Create))
+					var uploads = Path.Combine(wwwRootPath, @"images\products");
+					var extension = Path.GetExtension(file.FileName);
+
+					if (obj.Product.ImageURL != null)
+					{
+						var oldImagePath = Path.Combine(wwwRootPath, obj.Product.ImageURL.TrimStart('\\'));
+						if (System.IO.File.Exists(oldImagePath))
+						{
+							System.IO.File.Delete(oldImagePath);
+						}
+					}
+
+					using (var fileStreams = new FileStream(Path.Combine(uploads, fileName + extension), FileMode.Create))
 					{
 						file.CopyTo(fileStreams);
 					}
-					obj.Product.ImageURL = @"\images\products\" + fileName + extenshion;
+					obj.Product.ImageURL = @"\images\products\" + fileName + extension;
+
 				}
 				if (obj.Product.Id == 0)
 				{
@@ -87,7 +104,7 @@ namespace BulkyBookWeb.Areas.Admin.Controllers
 					_unitOfWork.Product.Update(obj.Product);
 				}
 				_unitOfWork.Save();
-				TempData["success"] = "Product added successfully";
+				TempData["success"] = "Product created successfully";
 				return RedirectToAction("Index");
 			}
 			return View(obj);
