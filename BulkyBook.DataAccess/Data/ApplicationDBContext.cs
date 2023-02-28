@@ -1,10 +1,11 @@
 ﻿
 using Microsoft.EntityFrameworkCore;
 using BulkyBook.Models;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 
 namespace BulkyBook.DataAccess
 {
-    public class ApplicationDBContext: DbContext
+    public class ApplicationDBContext: IdentityDbContext
     {
         public ApplicationDBContext(DbContextOptions<ApplicationDBContext> options) : base(options)
         {
@@ -13,6 +14,9 @@ namespace BulkyBook.DataAccess
         public DbSet<Category> Categories { get; set; } 
         public DbSet<CoverType> CoverTypes { get; set; }
         public DbSet<Product> Products { get; set; }
-    }
+        public DbSet<ApplicationUser> ApplicationUsers { get; set; }
+        public DbSet<Company> Companies { get; set; }
+
+	}
 
 }
