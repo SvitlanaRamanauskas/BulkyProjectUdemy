@@ -26,9 +26,9 @@ namespace BulkyBookWeb.Areas.Customer.Controllers
             return View(productList);
         }
 
-        public IActionResult Details(int productId)
+        public IActionResult Details(int productId)// action for ShoppingCart("details" button)
         {
-            ShoppingCart cartObj = new()
+            ShoppingCart cartObj = new() // page of shoppingCart
             {
                 Count = 1,
                 ProductId = productId,
@@ -36,7 +36,7 @@ namespace BulkyBookWeb.Areas.Customer.Controllers
             };
             return View(cartObj);
 		}
-        [HttpPost]
+        [HttpPost] // to save adding to cart
         [ValidateAntiForgeryToken]
         [Authorize]
         public IActionResult Details(ShoppingCart shoppingCart)
